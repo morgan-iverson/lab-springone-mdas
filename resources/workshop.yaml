@@ -1,0 +1,26 @@
+apiVersion: training.educates.dev/v1beta1
+kind: Workshop
+metadata:
+  name: lab-springone-mdas
+spec:
+  title: lab-springone-mdas
+  description: ""
+  workshop:
+    files:
+    - image:
+        url: $(image_repository)/lab-springone-mdas-files:latest
+      includePaths:
+      - /workshop/**
+      - /exercises/**
+      - /README.md
+  session:
+    namespaces:
+      budget: medium
+    applications:
+      terminal:
+        enabled: true
+        layout: split
+      console:
+        enabled: true
+      editor:
+        enabled: true
